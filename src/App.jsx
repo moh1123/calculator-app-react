@@ -13,14 +13,28 @@ function App() {
     setPrev((prev) => [...prev, val + " "])
   };
 
+
+  const [c, setC] = useState(0)
+
+  function decrement() {
+    setC(prevVal => prevVal -1)
+  }
+
+  function increment() {
+    setC(prevVal => prevVal +1)
+  }
+
+
+
+
   return (
     <div className='calc-grid'>
       
       <div className='output'>
         <div className='previous-operand'>{prev}</div>
-        <div className='current-operand'>{result}</div>
+        <div className='current-operand'>{result} {c}</div>
       </div>
-
+{/* 
       <button className='span-two'>AC</button>
       <DigitButton symbol={"DEL"}/>
       <DigitButton symbol={"÷"}/>
@@ -37,7 +51,7 @@ function App() {
       <DigitButton symbol={"9"}/>
       <DigitButton symbol={"-"}/>
       <DigitButton symbol={"."}/>
-      <DigitButton symbol={"0"}/>
+      <DigitButton symbol={"0"}/> */}
    
 
       {/* <button onClick={e => setPrev(val + e.target.val)}>÷</button>
@@ -55,9 +69,13 @@ function App() {
       <button onClick={e => setVal(val + e.target.val)}>-</button>
       <button onClick={e => setVal(val + e.target.val)}>.</button>
       <button onClick={e => setVal(val + e.target.val)}>0</button> */}
-      <button className='span-two'>=</button>
-
+      <button onClick={increment} className='span-two'>=</button>
+      <button onClick={decrement} className='span-two'>-</button>
+      <button id="GSAPto">asd</button>
+      
     </div>
+
+    
   )
 }
 
